@@ -1,6 +1,6 @@
-#算法题目汇总
+# 算法题目汇总
 
-##bfs
+## bfs
 
 [逆向思考bfs](image/image.png)
 
@@ -60,6 +60,63 @@ int main()
    sum+=arr[a];
   }
   cout<<sum<<endl;
+ }
+ return 0;
+}
+```
+
+## 二分
+
+![二分](image/image1.png)
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int n,m,k;
+int arr[10005];
+bool panduan(int chang)
+{
+ int zongchang=0;
+ for(int i=1;i<=m;i++)
+ {
+  if(arr[i]>zongchang)
+  {
+   k--;
+   zongchang=arr[i]+chang-1;
+  }
+  if(k<0)
+  {
+   return false;
+  }
+ } 
+ return true;
+}
+int main()
+{
+ int T;
+ cin>>T;
+ while(T--)
+ {
+  cin>>n>>m>>k;
+  for(int i=1;i<=m;i++)
+  {
+   cin>>arr[i];
+  }
+  int l=1;
+  int r=n/k+2;
+  int mid;
+  while(l<r)
+  {
+   mid=(l+r)/2;
+   if(panduan(mid))
+   {
+    r=mid;
+   }
+   else{
+    l=mid+1;
+   }
+  }
+  cout<<l<<endl;
  }
  return 0;
 }
