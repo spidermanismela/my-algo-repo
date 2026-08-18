@@ -2,7 +2,7 @@
 
 ## bfs
 
-[逆向思考bfs](image/image.png)
+![逆向思考bfs](image/image.png)
 
 ```cpp
 # include<bits/stdc++.h>
